@@ -1,0 +1,123 @@
+{
+  "station": [
+    {
+      "name": "FM Gold",
+      "streamURL": "http://airfmgold-lh.akamaihd.net/i/fmgold_1@507591/master.m3u8",
+      "genre": "All India Radio",
+      "desc": "",
+      "imageURL": ""
+    },
+    {
+      "name": "Vividh Bharati",
+      "streamURL": "http://vividhbharati-lh.akamaihd.net/i/vividhbharati_1@507811/master.m3u8",
+      "genre": "All India Radio",
+      "desc": "",
+      "imageURL": ""
+    },
+    {
+      "name": "FM Rainbow",
+      "streamURL": "http://fmrainbow-lh.akamaihd.net/i/fmrainbow_1@507812/master.m3u8",
+      "genre": "All India Radio",
+      "desc": "",
+      "imageURL": ""
+    },
+    {
+      "name": "AIR Urdu",
+      "streamURL": "http://airurdu-lh.akamaihd.net/i/airurdu_1@507813/master.m3u8",
+      "genre": "All India Radio",
+      "desc": "",
+      "imageURL": ""
+    },
+    {
+      "name": "Raagam",
+      "streamURL": "http://airraagam-lh.akamaihd.net/i/airraagam_1@507820/master.m3u8",
+      "genre": "All India Radio",
+      "desc": "",
+      "imageURL": ""
+    },
+    {
+      "name": "AIR Gujarati",
+      "streamURL": "http://airgujarati-lh.akamaihd.net/i/airgujarati_1@507814/master.m3u8",
+      "genre": "All India Radio",
+      "desc": "",
+      "imageURL": ""
+    },
+    {
+      "name": "AIR Marathi",
+      "streamURL": "http://airmarathi-lh.akamaihd.net/i/airmarathi_1@507815/master.m3u8",
+      "genre": "All India Radio",
+      "desc": "",
+      "imageURL": ""
+    },
+    {
+      "name": "AIR Punjabi",
+      "streamURL": "http://airpunjabi-lh.akamaihd.net/i/airpunjabi_1@507822/master.m3u8",
+      "genre": "All India Radio",
+      "desc": "",
+      "imageURL": ""
+    },
+    {
+      "name": "AIR Malayalam",
+      "streamURL": "http://airmalayalam-lh.akamaihd.net/i/airmalayalam_1@507816/master.m3u8",
+      "genre": "All India Radio",
+      "desc": "",
+      "imageURL": ""
+    },
+    {
+      "name": "AIR Tamil",
+      "streamURL": "http://airtamil-lh.akamaihd.net/i/airtamil_1@507817/master.m3u8",
+      "genre": "All India Radio",
+      "desc": "",
+      "imageURL": ""
+    },
+    {
+      "name": "AIR Telugu",
+      "streamURL": "http://airtelugu-lh.akamaihd.net/i/airtelugu_1@507818/master.m3u8",
+      "genre": "All India Radio",
+      "desc": "",
+      "imageURL": ""
+    },
+    {
+      "name": "AIR Kannada",
+      "streamURL": "http://airkannada-lh.akamaihd.net/i/airkannada_1@507819/master.m3u8",
+      "genre": "All India Radio",
+      "desc": "",
+      "imageURL": ""
+    },
+    {
+      "name": "AIR Bangla",
+      "streamURL": "http://airbangla-lh.akamaihd.net/i/airbangla_1@507821/master.m3u8",
+      "genre": "All India Radio",
+      "desc": "",
+      "imageURL": ""
+    },
+    {
+      "name": "Radio Kashmir",
+      "streamURL": "http://kashmiri-lh.akamaihd.net/i/kashmiri_1@528067/master.m3u8",
+      "genre": "All India Radio",
+      "desc": "",
+      "imageURL": ""
+    },
+    {
+      "name": "AIR Odia",
+      "streamURL": "http://airodiya-lh.akamaihd.net/i/airodiya_1@528056/master.m3u8",
+      "genre": "All India Radio",
+      "desc": "",
+      "imageURL": ""
+    },
+    {
+      "name": "AIR Assamese",
+      "streamURL": "http://airassamese-lh.akamaihd.net/i/airassamese_1@528059/master.m3u8",
+      "genre": "All India Radio",
+      "desc": "",
+      "imageURL": ""
+    },
+    {
+      "name": "North Eastern Service",
+      "streamURL": "http://northeastservice-lh.akamaihd.net/i/northeastservice_1@528061/master.m3u8",
+      "genre": "All India Radio",
+      "desc": "",
+      "imageURL": ""
+    }
+  ]
+}
