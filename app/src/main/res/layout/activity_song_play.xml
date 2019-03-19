@@ -24,31 +24,11 @@
         android:layout_height="60dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="340dp"
+        android:onClick="playBackward"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/backward" />
 
-    <ImageView
-        android:id="@+id/playItem"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="340dp"
-        android:contentDescription="playSong"
-        android:onClick="playSong"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/play" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="340dp"
-        app:layout_constraintStart_toEndOf="@+id/playItem"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/foward" />
 
     <ImageView
         android:id="@+id/imageView6"
@@ -92,5 +72,28 @@
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/playItem"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="340dp"
+        android:background="@drawable/play"
+        android:onClick="playSong"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/imageView5"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="340dp"
+        android:background="@drawable/foward"
+        android:onClick="playForward"
+        app:layout_constraintStart_toEndOf="@+id/playItem"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/foward" />
 
 </android.support.constraint.ConstraintLayout>

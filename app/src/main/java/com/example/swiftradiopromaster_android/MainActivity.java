@@ -1,17 +1,13 @@
 package com.example.swiftradiopromaster_android;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,14 +15,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
+
+import static com.example.swiftradiopromaster_android.MySingleton.*;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -36,7 +31,11 @@ public class MainActivity extends AppCompatActivity {
     List<String> stationName = new ArrayList<String>();
 
     List<String> genreArray = new ArrayList<String>();
+    MySingleton mySingleton;
 
+    //List<getJsonData> finalArray = new ArrayList<getJsonData>();
+
+    public  getJsonData getJsonDataobj;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -45,21 +44,26 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter adapter = new ArrayAdapter<String>(this,
                 R.layout.customlayout, stationName);
 
-
+        final MySingleton mySingleton = getInstance();
         get_json();
-        ListView listView = (ListView) findViewById(R.id.mobile_list);
+        ListView listView = findViewById(R.id.mobile_list);
         customAdapter customAdapter = new customAdapter();
+
+
         listView.setAdapter(customAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(),"Hello " + stationName.get(position),Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Hello " + position,Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), SongPlayActivity.class);
-                //EditText editText = view.findViewById(R.id.label);
 
-                intent.putExtra("title",stationName.get(position).toString());
-                intent.putExtra("songUrl",stationName.get(position).toString());
-                //intent.putExtra("title","hello");
+                Object objectCliked = finalArray.get(position);
+                String title = ((getJsonData) objectCliked).getTrackName();
+
+                intent.putExtra("title",title);
+                intent.putExtra("songUrl",((getJsonData) objectCliked).getStreamURL());
+                int index = position;
+                intent.putExtra("clickedIndex",index);
                 startActivity(intent);
 
             }
@@ -113,11 +117,11 @@ public class MainActivity extends AppCompatActivity {
             byte[] buffer = new byte[size];
             ins.read(buffer);
             ins.close();
-            json = new String(buffer, "UTF-8");
+            json = new String(buffer, StandardCharsets.UTF_8);
 
             JSONObject jsonObject = new JSONObject(json);
             // Getting JSON Array node
-            JSONArray jarray = (JSONArray) jsonObject.getJSONArray("station");
+            JSONArray jarray = jsonObject.getJSONArray("station");
 
             for(int i=0; i< jarray.length(); i++)
             {
@@ -125,11 +129,13 @@ public class MainActivity extends AppCompatActivity {
 
                 String trackName = finalObject.getString("name");
                 String genreName = finalObject.getString("genre");
+                String streamUrl = finalObject.getString("streamURL");
                 stationName.add(trackName);
                 genreArray.add(genreName);
+                getJsonDataobj = new getJsonData(trackName,genreName,streamUrl);
+                finalArray.add(getJsonDataobj);
             }
 
-           // Log.d("tag length", String.valueOf(jarray.length()));
 
         }catch(IOException e){
                 e.printStackTrace();
