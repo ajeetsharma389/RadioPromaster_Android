@@ -42,8 +42,6 @@ public class SongPlayActivity extends AppCompatActivity {
         mediaPlayer = new MediaPlayer();
         mySingleton = MySingleton.getInstance();
 
-
-
         playPause = false;
     }
 
@@ -53,6 +51,7 @@ public class SongPlayActivity extends AppCompatActivity {
         super.onDestroy();
         mediaPlayer.stop();
         mediaPlayer.reset();
+        mediaPlayer.release();
     }
     public void addCustomView(){
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -73,7 +72,6 @@ public class SongPlayActivity extends AppCompatActivity {
         Log.d("tag","streamUrl " + streamUrl);
 
         if (!playPause) {
-
 
             if (initialStage) {
                 new Player().execute(streamUrl);
@@ -118,6 +116,17 @@ public class SongPlayActivity extends AppCompatActivity {
         mediaPlayer.stop();
         mediaPlayer.reset();
         this.playSong(null);
+    }
+
+    public void makeFav(View view) {
+    }
+
+    public void playRefresh(View view) {
+        mediaPlayer.stop();
+        mediaPlayer.reset();
+        playPause = false;
+        initialStage = true;
+        playSong(null);
     }
 
     class Player extends AsyncTask<String, Void, Boolean> {
